@@ -2,6 +2,9 @@ source(here::here("R/package-loading.r")
 
 # basics of R --------------------------------------------------------------
 
+
+r3::check_git_config()
+
 weight_kilos <- 100
 weight_kilos
 c("a", "b", "c")
