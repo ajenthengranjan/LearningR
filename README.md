@@ -1,4 +1,4 @@
-# LearningR: To become Luke
+# LearningR: To NOT become Luke
 
 This is for the DDA course.
 
