@@ -1,4 +1,4 @@
-# LearningR: To NOT become Luke
+# LearningR: To become more like Luke 🤩
 
 This is for the DDA course.
 
