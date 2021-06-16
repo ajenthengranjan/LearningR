@@ -6,10 +6,10 @@ colnames(NHANES)
 
 # Look at contents
 str(NHANES)
-glimpse(___)
+glimpse(NHANES)
 
 # See summary
-summary(___)
+summary(NHANES)
 
 # Look over the dataset documentation
-?___
+?NHANES
