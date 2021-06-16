@@ -10,7 +10,7 @@ select(NHANES, Age, Weight, BMI)
 
 
 #exclude columns
-select(NHANES, -HeadCirc)
+select(NHANES,-HeadCirc)
 
 #select colums based on some criteria
 select(NHANES, starts_with("BP"))
@@ -102,3 +102,34 @@ nhanes_small %>%
 nhanes_small %>%
     filter (bmi >= 25 | sex == "female")
 
+#arranging data
+# by age
+
+nhanes_small %>%
+    arrange(age)
+
+# arrange by sex in asscending order
+nhanes_small %>%
+    arrange(sex)
+
+# by age in descending order
+
+nhanes_small %>%
+    arrange(desc(age))
+
+#Arranging by sex then age in ascending order
+nhanes_small %>%
+    arrange(desc(sex), age)
+
+# Transform or add columns
+
+nhanes_small %>%
+    mutate(height = height / 100)
+
+#add a column
+nhanes_small <- nhanes_small %>%
+    mutate(log_height = log(height))
+
+
+nhanes_small %>%
+    mutate(height = height/100, log_height=log(height))
