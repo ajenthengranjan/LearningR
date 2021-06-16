@@ -48,3 +48,12 @@ nhanes_small %>%
               min_height = min(height, na.rm=TRUE),
               Med_pa = median(phys_active_days, na.rm=TRUE),
               median_age= median(age, na.rm=TRUE))
+
+#calculating summary statistics by group
+
+    nhanes_small %>%
+        filter(!is.na(diabetes)) %>%
+        group_by(diabetes) %>%
+        summarise(mean_age = mean(age, na.rm=TRUE),
+                 mean_bmi = mean(bmi, na.rm=TRUE)) %>%
+        ungroup()
