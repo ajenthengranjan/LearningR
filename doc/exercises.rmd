@@ -5,11 +5,24 @@ date: "6/16/2021"
 output: html_document
 ---
 
+1. Ajenthen G. Ranjan
+2. Steno Diabetes Center Copenhagen, Gentofte
+3. Danish Diabetes Academy, Odense
+
+
 ```{r setup, include=FALSE}
 source(here::here("R/package-loading.R"))
 load(here::here("data/nhanes_small.rda"))
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
+# Introduction
+
+# Methods and Results
+
+## Baseline
+In this study, **40** participants with *type 1 diabetes* were included
 
 ```{r prettier-table, echo=FALSE}
 nhanes_small %>%
@@ -27,4 +40,20 @@ nhanes_small %>%
     ungroup() %>% 
     knitr::kable(caption = "Table caption. Mean values of Age and BMI for each sex and diabetes status.") 
 ```
+
+## Main findings
+
+```{r bgm-image, out.width="50%", out.height="50%", fig.cap="Blood glucose measurement"}
+knitr::include_graphics(here::here("doc/images/bgm.jpg"))
+```
+
+
+
+# Discussion
+
+# Conclusion
+
+
+
+
 
