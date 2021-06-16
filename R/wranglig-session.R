@@ -144,3 +144,17 @@ nhanes_update <- nhanes_small %>%
     mutate(highly_active = if_else(phys_active_days >= 5, "Yes", "No"))
 
 nhanes_update
+
+
+#Summary statistics
+#maxBMI
+
+nhanes_small %>%
+    summarise(max_bmi = max(bmi))
+
+nhanes_small %>%
+    summarise(max_bmi = max(bmi, na.rm=TRUE),
+              min_bmi = min(bmi, na.rm=TRUE),
+              mean_bmi= mean(bmi, na.rm=TRUE),
+              Std_bmi = sd(bmi, na.rm=TRUE),
+              med_bmi =median(bmi, na.rm=TRUE))
