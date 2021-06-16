@@ -72,3 +72,16 @@ nhanes_small %>%
 
 nhanes_small %>%
     rename(physically_active = phys_active)
+
+#Filtering
+#Filter for all female
+
+nhanes_small %>%
+    select(sex) %>%
+    filter (sex=="female")
+
+#Filter all not female
+
+nhanes_small %>%
+    select(sex) %>%
+    filter(sex !="female")
