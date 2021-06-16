@@ -57,3 +57,7 @@ nhanes_small %>%
         summarise(mean_age = mean(age, na.rm=TRUE),
                  mean_bmi = mean(bmi, na.rm=TRUE)) %>%
         ungroup()
+
+#saving data as files
+#Saving data as an .rda file in the data
+usethis::use_data(nhanes_small, overwrite =TRUE)
