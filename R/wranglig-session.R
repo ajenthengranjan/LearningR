@@ -3,7 +3,7 @@ source(here::here("R/package-loading.R"))
 #Briefly glimps content of the dataset
 glimpse(NHANES)
 
-select(NHANES,Age)
+select(NHANES, Age)
 
 # Select multiple column
 select(NHANES, Age, Weight, BMI)
@@ -18,15 +18,28 @@ select(NHANES, starts_with("BP"))
 select(NHANES, ends_with("Day"))
 
 select(NHANES, contains("Age"))
-?select_helpers
+? select_helpers
 
 #Make a smaller dataset
 # Save the selected columns as a new data frame
 # Recall the style guide for naming objects
-nhanes_small <- select(NHANES, Age, Gender, Height,
-                       Weight, BMI, Diabetes, DiabetesAge,
-                       PhysActiveDays, PhysActive, TotChol,
-                       BPSysAve, BPDiaAve, SmokeNow, Poverty)
+nhanes_small <- select(
+    NHANES,
+    Age,
+    Gender,
+    Height,
+    Weight,
+    BMI,
+    Diabetes,
+    DiabetesAge,
+    PhysActiveDays,
+    PhysActive,
+    TotChol,
+    BPSysAve,
+    BPDiaAve,
+    SmokeNow,
+    Poverty
+)
 
 # View the new data frame
 nhanes_small
@@ -43,6 +56,19 @@ colnames(NHANES)
 
 #Renaming secific columns
 
-nhanes_small <- rename(nhanes_small, sex=gender)
+nhanes_small <- rename(nhanes_small, sex = gender)
 
 colnames(nhanes_small)
+
+#Using pipefunction to do multiple functions at once
+
+nhanes_small %>% colnames()
+
+#using several functions together
+
+nhanes_small %>%
+    select(phys_active) %>%
+    rename(physically_active = phys_active)
+
+nhanes_small %>%
+    rename(physically_active = phys_active)
