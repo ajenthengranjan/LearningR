@@ -11,3 +11,11 @@ select(NHANES, Age, Weight, BMI)
 
 #exclude columns
 select(NHANES,-HeadCirc)
+
+#select colums based on some criteria
+select(NHANES, starts_with("BP"))
+
+select(NHANES, ends_with("Day"))
+
+select(NHANES, contains("Age"))
+?select_helpers
