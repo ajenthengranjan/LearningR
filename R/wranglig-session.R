@@ -133,3 +133,14 @@ nhanes_small <- nhanes_small %>%
 
 nhanes_small %>%
     mutate(height = height/100, log_height=log(height))
+
+
+# Add condition column
+nhanes_small %>%
+    mutate(highly_active =
+               if_else(phys_active_days >= 5, "Yes", "No"))
+
+nhanes_update <- nhanes_small %>%
+    mutate(highly_active = if_else(phys_active_days >= 5, "Yes", "No"))
+
+nhanes_update
