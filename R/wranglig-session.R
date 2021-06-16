@@ -10,7 +10,7 @@ select(NHANES, Age, Weight, BMI)
 
 
 #exclude columns
-select(NHANES,-HeadCirc)
+select(NHANES, -HeadCirc)
 
 #select colums based on some criteria
 select(NHANES, starts_with("BP"))
@@ -78,10 +78,14 @@ nhanes_small %>%
 
 nhanes_small %>%
     select(sex) %>%
-    filter (sex=="female")
+    filter (sex == "female")
 
 #Filter all not female
 
 nhanes_small %>%
     select(sex) %>%
-    filter(sex !="female")
+    filter(sex != "female")
+
+#participants wjo have BMI equal to 25
+nhanes_small %>%
+    filter (bmi == 25)
