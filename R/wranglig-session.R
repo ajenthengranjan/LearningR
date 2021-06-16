@@ -89,3 +89,16 @@ nhanes_small %>%
 #participants wjo have BMI equal to 25
 nhanes_small %>%
     filter (bmi == 25)
+
+#participants who have BMI equal to 25
+nhanes_small %>%
+    filter (bmi >= 25)
+
+#participants who have BMI above 25 and female
+nhanes_small %>%
+    filter (bmi >= 25 & sex == "female")
+
+#participants who have BMI above 25 OR female
+nhanes_small %>%
+    filter (bmi >= 25 | sex == "female")
+
