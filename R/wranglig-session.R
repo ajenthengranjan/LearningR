@@ -7,3 +7,7 @@ select(NHANES,Age)
 
 # Select multiple column
 select(NHANES, Age, Weight, BMI)
+
+
+#exclude columns
+select(NHANES,-HeadCirc)
